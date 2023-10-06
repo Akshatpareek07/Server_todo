@@ -6,7 +6,6 @@ const taskAdd=async(req,res)=>{
     let taskDescription=req.body.taskDescription;
     
     
-    //let {name,email,phone,password} ={req.body.username,req.body.email,req.body.phone,req.body.password};
     let data=new Tasks({
         taskName:taskName,
         taskDescription:taskDescription,
@@ -14,7 +13,6 @@ const taskAdd=async(req,res)=>{
     });
     let response=await data.save();
     
-    // let myToken=await data.getAuthToken();
     res.json({message:"added", token:"myToken",response:response});
 
 }
